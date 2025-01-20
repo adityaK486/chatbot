@@ -11,14 +11,14 @@ function App() {
   const onChange = (e) => setValue(e.target.value);
 
   const handleSubmit = async () => {
-    const response = await axios.post("http://localhost:3005/chatbot", {
+    const response = await axios.post("https://chatbot-b0ug.onrender.com/chatbot", {
       question: value,
     });
     setResponse(response.data);
   };
 
   const fetchHistory = async () => {
-    const response = await axios.get("http://localhost:3005/chat-history");
+    const response = await axios.get("https://chatbot-b0ug.onrender.com/chat-history");
     console.log("Chat History:", response.data);
     setHistory(response.data); 
   };
